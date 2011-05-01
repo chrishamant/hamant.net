@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" version="HTML+RDFa 1.1"
+  prefix="cc: http://creativecommons.org/ns#"
+  prefix="dc: http://purl.org/dc/elements/1.1/"
+  prefix="foaf: http://xmlns.com/foaf/0.1/"
+  prefix="bibo: http://purl.org/ontology/bibo/">
+<head>
+  <title>{{ page.title }}</title>
+  <meta charset="utf-8" />
+  <meta name="author" property="dc:creator" content="Chris Hamant" />
+  <meta content="{{page.description}}" name="description" />
+  <meta content="{{page.keywords}}" name="keywords" />
+  <link rel="alternate" type="application/atom+xml" title="Content Feed" href="/atom.xml" />
+  <link rel="stylesheet" href="css/inuit.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <h1><a rel="homepage">Hallucinations of Grandeur</a></h1>
+  {{ content }}
+  <footer>
+    <p class="copyright" property="dc:rights">&copy; <span property="dc:dateCopyrighted">2001-2011</span> <a href="mailto:chris@hamant.net" property="dc:publisher">Chris Hamant</a>. Licensed under <a rel="cc:license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons</a>.</p>
+  </footer>
+  <script>
+    (function() {
+      var d, getScript, l, script, scripts, _gaq, _i, _len;
+      _gaq = [['_setAccount', 'UA-18606719-1'], ['_trackPageview']];
+      d = window.document;
+      l = d.location;
+      scripts = ['google-analytics.com/ga.js', 'ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js', l.host + '/js/site.js'];
+      getScript = function(src) {
+        var e, s;
+        s = d.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http:' === d.location.protocol ? 'http://' + src : 'https://' + src;
+        e = (d.getElementsByTagName('script')[0]);
+        return e.parentNode.insertBefore(s, e);
+      };
+      for (_i = 0, _len = scripts.length; _i < _len; _i++) {
+        script = scripts[_i];
+        getScript(script);
+      }
+    }).call(this);
+  </script>
+</body>
+</html>
