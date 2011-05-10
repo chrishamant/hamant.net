@@ -20,4 +20,4 @@ There really isn't going to be a theme or anything. Expect pure brain dump (it i
 
 I'll bring back the dead by visiting archive.org soon. Until then enjoy feeding on some of my other distributed internet output.
 
--csh
+--csh
