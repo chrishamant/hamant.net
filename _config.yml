@@ -1,4 +1,14 @@
-pygments: true
-permalink: pretty
-markdown: kramdown
-paginate: 15
+pygments:   true
+permalink:  pretty
+markdown:   kramdown
+paginate:   15
+base-url:   /b/
+exclude: 
+  - Makefile
+  - bootstrap.coffee
+  - site.coffee
+  - inuit.styl
+  - site.styl
+  - projects
+kramdown:
+  auto_ids: true
