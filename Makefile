@@ -23,6 +23,9 @@ gzip:
 	gzip -c $(JSOUT)/site.min.js > $(JSOUT)/site.min.js.gz
 	gzip -c $(CSS)/site.css > $(CSS)/site.css.gz
 
+post:
+	cp _posts/post_template.md _posts/$(shell date "+%Y-%m-%d")-TITLE.md
+
 build: site coffee styles min gzip
 
 clean:
