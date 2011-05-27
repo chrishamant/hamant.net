@@ -2,7 +2,7 @@ BUILDDIR = _site
 JSOUT = $(BUILDDIR)/js
 CSS = $(BUILDDIR)/css
 SITE = kubrick
-REMOTEPATH = test
+REMOTEPATH = /srv/hamant.net
 
 all: build
 
@@ -31,7 +31,7 @@ post:
 push:
 	cd _site; tar -cz . | ssh $(SITE) "(cd $(REMOTEPATH);tar -xzvf -)"
 
-deploy: build push
+deploy: clean build push
 
 build: site coffee styles min gzip
 
