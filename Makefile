@@ -1,6 +1,8 @@
 BUILDDIR = _site
 JSOUT = $(BUILDDIR)/js
 CSS = $(BUILDDIR)/css
+SITE = kubrick
+REMOTEPATH = test
 
 all: build
 
@@ -25,6 +27,11 @@ gzip:
 
 post:
 	cp _posts/post_template.md _posts/$(shell date "+%Y-%m-%d")-TITLE.md
+
+push:
+	cd _site; tar -cz . | ssh $(SITE) "(cd $(REMOTEPATH);tar -xzvf -)"
+
+deploy: build push
 
 build: site coffee styles min gzip
 
