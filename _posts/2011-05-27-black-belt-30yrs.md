@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Getting your black belt in 30 Years
+title: Getting Your Black Belt In 30 Years
 description: These things take time. Practice is the purpose imho.
 keywords: chris hamant
 change_frequency: monthly
