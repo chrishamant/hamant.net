@@ -34,7 +34,6 @@ html
   font-size: 100%
   font-family: Georgia, "Times New Roman", serif
   line-height: 1.5
-  background: url(../img/css/baseline.gif) 0 4px #fff
   color: #333
 
 body
@@ -42,7 +41,6 @@ body
   min-height: 100%
   padding: 10px
   margin: 0 auto
-  background: url(../img/css/grid.png) top center repeat-y
 
 .grids
   margin-left: -20px
@@ -424,46 +422,9 @@ ul.message
 .letterpress
   text-shadow: 0 -1px 0 rgba(0,0,0,0.75), 0 1px 0 rgba(255,255,255,0.25)
 
-.debug
-  background: url(../img/css/baseline.gif) 0 4px #fff
-
-.debug body
-  background: url(../img/css/grid.png) top center repeat-y
-
-.debug [style]
-  outline: 5px solid yellow
-
-.debug img
-  outline: 5px solid red
-
-.debug img[alt]
-  outline-color: green
-
-.debug img[alt=""]
-  outline-color: yellow
-
-.debug a
-  outline: 5px solid yellow
-
-.debug a[title]
-  outline-color: green
-
-.debug a[href="#"]
-  outline-color: yellow
-
-.debug a[target]
-  outline-color: red
-
-.debug [class=""], .debug [id=""]
-  outline: 5px solid yellow
-
 @media (min-width: 721px) and (max-width: 960px)
   body
     width: 700px
-    background: url(../img/css/grid-720.png) top center repeat-y
-
-  .debug body
-    background: url(../img/css/grid-720.png) top center repeat-y
 
   .grid-1
     width: 25px
@@ -596,14 +557,4 @@ ul.message
   a:link:after,a:visited:after, a:link::after,a:visited::after
     content: " (" attr(href) ")"
     font-size: smaller
-  
-  a[href^="/"]:after, a[href^="/"]::after
-    content: " (http://yoururlhere.com" attr(href) ")"
-    font-size: smaller
-  
-  object:after, object::after
-    content: "Flash/video content. Head to http://yoururlhere.com/ to view this content."
-    display: block
-    font-weight: bold
-    margin-bottom: 1.5em
 

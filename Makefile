@@ -29,13 +29,13 @@ post:
 	cp _posts/post_template.md _posts/$(shell date "+%Y-%m-%d")-TITLE.md
 
 push:
-	cd _site; tar -cz . | ssh $(SITE) "(cd $(REMOTEPATH);tar -xzvf -)"
+	cd _site; rsync -r -t -v ./ $(SITE):$(REMOTEPATH)
 
-deploy: clean build push
+deploy: build push
 
 build: site coffee styles min gzip
 
 clean:
 	rm -rf $(BUILDDIR)
 
-.PHONY: clean build all
+.PHONY: build all
