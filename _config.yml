@@ -10,5 +10,8 @@ exclude:
   - inuit.styl
   - site.styl
   - projects
+  - LICENSE
+  - README
+  - TODO
 kramdown:
   auto_ids: true

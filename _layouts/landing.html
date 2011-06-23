@@ -12,7 +12,6 @@
   <meta content="{{page.keywords}}" name="keywords" />
   <link rel="alternate" type="application/atom+xml" title="Content Feed" href="/atom.xml" />
   <link rel="stylesheet" href="/css/site.css" />
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/headjs/0.96/head.min.js"></script>
 </head>
 <body>
   <hgroup>
@@ -24,30 +23,12 @@
     <p class="copyright" property="dc:rights">&copy; <span property="dc:dateCopyrighted">2001-2011</span> <a href="mailto:chris@hamant.net" property="dc:publisher">Chris Hamant</a><span class="license"><a rel="cc:license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a></span></p>
   </footer>
   <script>
-    (function() {
-      var h, scripts, sitescripts, w;
-      w = window;
-      h = head;
-      w._gaq = [['_setAccount', 'UA-18606719-1'], ['_trackPageview']];
-      w.disqus_shortname = 'hamantdotnet';
-      scripts = [
-        {
-          ga: '//google-analytics.com/ga.js'
-        }, {
-          pgcmts: '//hamantdotnet.disqus.com/embed.js'
-        }
-      ];
-      sitescripts = [
-        '//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js', {
-          site: '/js/site.js'
-        }
-      ];
-      h.js.apply(null, sitescripts);
-      h.js.apply(null, scripts);
-      h.ready("site", function() {
-        return w.init();
-      });
-    }).call(this);
+      var _gaq = [['_setAccount', 'UA-18606719-1'],['_trackPageview']];
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = '//google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
   </script>
 </body>
 </html>
