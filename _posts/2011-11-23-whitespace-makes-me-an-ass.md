@@ -1,3 +1,10 @@
+---
+layout: post
+title: Significant Whitespace Has Made Me An Ass
+description: Really a bad quirk to have...
+keywords: chris hamant
+change_frequency: monthly
+---
 # Significant Whitespace has made me an asshole
 
 I've been programming for a good period of my life and had exposure to a whole variety of different programming languages and styles of coding. It started with simple stuff such as Basic, Logo et al - and through the years I've had exposure to the whole slew of mainstream *nix scripting languages (Perl, Python, Ruby, PHP) and systems languages (C,C++,C#,Java). Lately I've found myself in a position where I work primarily alone doing prototyping using HTML, CSS, and Javascript (with sprinkled with various 'backend' tools). So I feel pretty comfortable reading code written in whole variety of paradigms and styles...
