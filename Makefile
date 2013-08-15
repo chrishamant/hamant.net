@@ -2,12 +2,13 @@ BUILDDIR = _site
 JSOUT = $(BUILDDIR)/js
 CSS = $(BUILDDIR)/css
 SITE = kubrick
-REMOTEPATH = /srv/hamant.net
+REMOTEPATH = /srv/http/hamant.net
+OPSPATH = $(HOME)/src/personal/hamant-ops
 
 all: build
 
 site:
-	jekyll --kramdown
+	jekyll build
 
 coffee:
 	coffee -c -o $(JSOUT)/ js/*.coffee
@@ -17,8 +18,8 @@ styles:
 	cat css/inuit.styl css/site.styl | stylus -c > $(CSS)/site.css
 
 min:
-	uglifyjs -nc $(JSOUT)/bootstrap.js > $(JSOUT)/bootstrap.min.js
-	uglifyjs -nc $(JSOUT)/site.js > $(JSOUT)/site.min.js
+	uglifyjs $(JSOUT)/bootstrap.js > $(JSOUT)/bootstrap.min.js
+	uglifyjs $(JSOUT)/site.js > $(JSOUT)/site.min.js
 
 gzip:
 	gzip -c $(JSOUT)/bootstrap.min.js > $(JSOUT)/bootstrap.min.js.gz
@@ -32,6 +33,7 @@ push:
 	cd _site; rsync -r -t -v ./ $(SITE):$(REMOTEPATH)
 
 deploy: build push
+	cd $(OPSPATH); ansible personal -m service -a "name=nginx state=restarted"
 
 build: site coffee styles min gzip
 
