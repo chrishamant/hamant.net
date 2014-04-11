@@ -1,0 +1,19 @@
+---
+title : Milewide
+server : https://www.google.com/accounts/o8/ud?source=profiles
+delegate : https://plus.google.com/+ChrisHamant/posts
+---
+extends /_layout/site
+
+block append head
+  link(rel="openid2.provider",href=page.server)
+  link(rel="openid2.local_id",href=page.delegate)
+  link(rel="openid.server",href=page.server)
+  link(rel="openid.delegate",href=page.delegate)
+
+block content
+  - var listing = site.collections.articles.slice(0,site.page_length)
+  ul.article_listing
+  each article, idx in listing
+    li.article: a(href=article.permalink)= article.title
+

@@ -1,2 +1,2 @@
-projects
-_site
+_build
+node_modules

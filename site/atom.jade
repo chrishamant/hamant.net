@@ -1,0 +1,22 @@
+---
+---
+doctype xml
+feed(xmlns="http://www.w3.org/2005/Atom")
+ title milewide
+ link(href="http://hamant.net/atom.xml" rel="self")
+ link(href="http://hamant.net/")
+ updated= site.date.toISOString()
+ id http://hamant.net/
+ author
+   name Chris Hamant
+   email chris@hamant.net
+
+ for article in site.articles
+   entry
+     title= article.title
+     link(href="http://hamant.net/#{article.permalink}")
+     updated= article.date.toISOString()
+     id http://hamant.net/#{article.permalink}
+     content(type="html")= files[article.permalink+"/index.jade"].contents
+
+

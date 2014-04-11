@@ -1,0 +1,13 @@
+---
+title : Milewide - Archive
+---
+extends /_layout/site
+
+block content
+  - var listing = site.collections.articles
+  ul.article_listing
+  each article, idx in listing
+    li.article
+      a(href="/b/#{article.slug}")= article.title
+      span.published= page.date
+

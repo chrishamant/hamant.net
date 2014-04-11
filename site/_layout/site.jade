@@ -1,0 +1,40 @@
+doctype html
+html(lang="en",version="HTML+RDFa 1.1",prefix=site.prefix)
+  head
+    block head
+      title #{ page.title || "hamant.net" }
+      meta(charset="#{page.charset || 'utf-8'}")
+      meta(name="author",property="dc:creator",content=site.author)
+      meta(content="#{site.description}",name="description")
+      meta(content="#{site.keywords}",name="keywords")
+      link(rel="alternate",type="application/atom+xml",title="Content Feed",href="/atom.xml")
+      link(rel="stylesheet",href="/css/site.css")
+  body
+    block header
+      hgroup
+        h1
+          a(rel="homepage",href="/") a milewide
+        h4 my little soapbox
+    block content
+    block foot
+      footer
+        p.copyright(property="dc:rights")
+          | &copy;&nbsp;
+          span(property="dc:dateCopyrighted") 2001-2014
+          | &nbsp;
+          a(href="mailto:chris@hamant.net",property="dc:publisher")= site.author
+          span.license
+            a(rel="cc:license",href="http://creativecommons.org/licenses/by-nc-sa/3.0/")
+              img(alt="Creative Commons License",style="border-width:0",src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png")
+        //p.small.site_info last built #{site.date.format('llll ZZ')}
+    block scripts
+      script(src='/js/site.js')
+      script.
+        var _gaq = [['_setAccount', 'UA-18606719-1'],['_trackPageview']];
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = '//google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+

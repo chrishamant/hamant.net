@@ -1,14 +1,17 @@
 ---
+
 layout: post
+slug : hello-worldv30
 title: Hello World v3.0
 description: Re-intro and relaunch of blog
 keywords: chris hamant,web developer,about,blog
-change_frequency: monthly
+date : 2011-04-29
+
 ---
 
 Well - I've always been here... Just maybe a little quieter.
 
-I think I'm done being quiet. Nothing really holding me back anymore but myself. I feel the need to create things, yet I spend so much of my time spinning the wheels without putting the nose to the grindstone. Maybe afraid to launch? Afraid of some kind of failure? Who knows... 
+I think I'm done being quiet. Nothing really holding me back anymore but myself. I feel the need to create things, yet I spend so much of my time spinning the wheels without putting the nose to the grindstone. Maybe afraid to launch? Afraid of some kind of failure? Who knows...
 
 I think I fail a little bit everyday already. But lately this failure has been punctuated with tiny victories. This is enough to make me want to open the doors and maybe share a little bit of myself with the world. I'm surely not the smartest guy you'll meet,not the best husband and father, nor the best programmer, nor even someone worth listening to.
 

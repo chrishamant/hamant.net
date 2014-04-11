@@ -1,43 +1,30 @@
-BUILDDIR = _site
-JSOUT = $(BUILDDIR)/js
-CSS = $(BUILDDIR)/css
-SITE = kubrick
-REMOTEPATH = /srv/http/hamant.net
-OPSPATH = $(HOME)/src/personal/hamant-ops
+BUILDDIR = $(HAMANTDOTNET_BUILDDIR)
+SITE = $(HAMANTDOTNET_SITE)
+REMOTEPATH = $(HAMANTDOTNET_REMOTEPATH)
+OPSPATH = $(HOME)$(HAMANTDOTNET_OPSPATH)
 
 all: build
 
-site:
-	jekyll build
+install_deps:
+	npm install
 
-coffee:
-	coffee -c -o $(JSOUT)/ js/*.coffee
+relink:
+	rm site/css/_includes/normalize.styl
+	ln -s $(CURDIR)/node_modules/normalize.css/normalize.css site/css/_includes/normalize.styl
 
-styles:
-	mkdir -p $(CSS)
-	cat css/inuit.styl css/site.styl | stylus -c > $(CSS)/site.css
-
-min:
-	uglifyjs $(JSOUT)/bootstrap.js > $(JSOUT)/bootstrap.min.js
-	uglifyjs $(JSOUT)/site.js > $(JSOUT)/site.min.js
-
-gzip:
-	gzip -c $(JSOUT)/bootstrap.min.js > $(JSOUT)/bootstrap.min.js.gz
-	gzip -c $(JSOUT)/site.min.js > $(JSOUT)/site.min.js.gz
-	gzip -c $(CSS)/site.css > $(CSS)/site.css.gz
-
-post:
-	cp _posts/post_template.md _posts/$(shell date "+%Y-%m-%d")-TITLE.md
+install: install_deps relink
 
 push:
-	cd _site; rsync -r -t -v ./ $(SITE):$(REMOTEPATH)
+	cd $(BUILDDIR); rsync -r -t -v ./ $(SITE):$(REMOTEPATH)
 
 deploy: build push
 	cd $(OPSPATH); ansible personal -m service -a "name=nginx state=restarted"
 
-build: site coffee styles min gzip
+build:
+	node bin/build.js
 
 clean:
 	rm -rf $(BUILDDIR)
 
-.PHONY: build all
+.PHONY: all
+

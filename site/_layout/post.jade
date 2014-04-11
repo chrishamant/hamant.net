@@ -1,0 +1,20 @@
+extends /_layout/site
+
+block append head
+  link(ref="bookmark",href="/#{page.permalink}")
+
+
+block content
+  block post_content
+  #discus-thread
+
+block append scripts
+  script.
+    //disqus variables
+    //window.disqus_shortname = 'hamantdotnet';
+    //(function() {
+    //  var e = document.createElement('script'); e.type = 'text/javascript'; e.async = true;
+    //  e.src = '//hamantdotnet.disqus.com/embed.js';
+    //  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
+    //})();
+

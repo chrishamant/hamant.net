@@ -1,0 +1,12 @@
+{
+  "prefix" : {
+    "cc" : "http://creativecommons.org/ns#",
+    "dc" : "http://purl.org/dc/elements/1.1/",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "bibo" : "http://purl.org/ontology/bibo/"
+  },
+  "keywords" : "blog programming javascript devops data",
+  "description" : "personal blog of Chris Hamant",
+  "author" : "Chris Hamant",
+  "page_length" : 8
+}
