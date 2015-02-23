@@ -1,0 +1,23 @@
+= doctype html
+html lang=en version="HTML+RDFa 1.1"
+  head
+    meta charset=utf-8
+    title {{.Site.Title}}
+    meta name="author" property="dc:creator" content="{{.Site.Params.author}}"
+    link rel="alternate" type="application/atom+xml" title="Content Feed" href="/atom.xml"
+    link rel="stylesheet" href="/css/site.css"
+  body
+    hgroup
+      h1
+        a rel="homepage" href="/" {{.Site.Title}}
+      h4 my little soapbox
+    h1 {{.Title}}
+    {{.Content}}
+    footer
+      p class="copyright" property="dc:rights" &copy;
+        span property="dc:dateCopyrighted" 2001-2015
+        a href="mailto:chris@hamant.net" property="dc:publisher" {{ .Site.Params.author }}
+        span.license
+          a rel="cc:license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"
+            img alt="Creative Commons License" style="border-width:0" src="//licensebuttons.net/l/by-nc-sa/3.0/80x15.png"
+

@@ -1,10 +1,11 @@
----
-layout: post
-title: Getting Your Black Belt In 30 Years
-description: These things take time. Practice is the purpose imho.
-keywords: chris hamant
-change_frequency: monthly
----
++++
+date = "2011-05-27T00:08:00Z"
+title = "Getting Your Black Belt In 30 Years"
+description = "These things take time. Practice is the purpose imho."
+aliases = [
+  "/2011/05/27/black-belt-30yrs/"
+]
++++
 
 I have many interests, hobbies and desires. I guess many would view this as the classic "Jack of All Trades --- Master of None" type thing... I'd like it if I had the time to master all them. This is a real struggle for me; One seems to have to whittle down the set of interests into things that either bring financial rewards, maybe the few of the things bring the most personal pleasure and focus on those if one hopes to gain any real or deep knowledge on anything.
 
@@ -21,3 +22,4 @@ It is all just a bit humbling I guess.
 Maybe I don't have to worry so much about learning everything there is to know in life. I'll probably continue to try advancing my understanding on many fronts (just my nature) but I guess in the end I just hope to be a better person... Hopefully to gain some insight into how/why I exist in this crazy world. Happiness even?
 
 To me it comes down to these two things. 頑張って --- and never cease to learn new things...
+

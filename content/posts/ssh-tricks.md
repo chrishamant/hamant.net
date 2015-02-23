@@ -1,12 +1,14 @@
----
-layout: post
-title: SSH Port Forwarding Tricks
-description: Some SSH Tricks
-keywords: chris hamant,ssh,tricks,how to get fired
-change_frequency: monthly
----
++++
+date = "2011-05-09T00:08:00Z"
+title= "SSH Port Forwarding Tricks"
+description= "Some SSH Tricks"
+keywords= "chris hamant,ssh,tricks,how to get fired"
+aliases = [
+  "/2011/05/09/ssh-tricks/"
+]
++++
+
 ## ...that probably violate your company's security policy
-{: .subtitle}
 
 [SSH](http://www.openssh.com/) is a very powerful tool that replaces the *beleaguered* (excellent word) telnet, rlogin and rsh family of tools (Don't know what these are? [here](http://lmgtfy.com/?q=telnet)). There are thousands of guides, HOWTOs, books, and wikis on which to find information about SSH.
 
@@ -35,7 +37,7 @@ This creates a tunnel from your local machine (port 4321) through ```yourmachine
 ### Reverse port forwarding
 
 This application is very similar to the above mentioned port forwarding exercises, but works in reverse.
-For example, you have something running on site.com (which you can access via ssh) - but for some reason want to forward a service running on your local machine (web server on port 80 in this case). 
+For example, you have something running on site.com (which you can access via ssh) - but for some reason want to forward a service running on your local machine (web server on port 80 in this case).
 
     ssh -R 80:localhost:4321 user@site.com
 
@@ -44,14 +46,15 @@ You can now access http://site.com:4321 and see the webserver running on your ma
 ## SOCKS Proxies
 
 SSH also has a built-in socks5 proxy server.
-    
+
     ssh -D 4321 username@yourmachine.com
 
-Will create a SOCKS5 proxy on localhost port #4321. This allows you to enter into your browser's (or whole machine's) proxy settings and point your OS's (or browser's) SOCKS proxy to localhost. This is useful for a variety of reasons... Similar to the 'Access a service through remote host' use case above - but on a broader scope as all requests will be forwarded through the remote host. This is also very good for protecting yourself at coffee shops and public wifi access points. Setup a server listening for SSH connections on port 443 (rare to find this blocked - and one would have to use [deep packet inspection](http://en.wikipedia.org/wiki/Deep_packet_inspection) to disambiguate the traffic) and you have the ability to create your own SOCKs proxy at will to help mitigate the threats of public wifi --- or is it just me that worries? I recommend setting up a [linode](http://www.linode.com/?r=f62b30ace9d03e44b746a44c0aff0ca7740bda77){: title="note the blantant plugging of referral code"} just for that purpose.
+Will create a SOCKS5 proxy on localhost port #4321. This allows you to enter into your browser's (or whole machine's) proxy settings and point your OS's (or browser's) SOCKS proxy to localhost. This is useful for a variety of reasons... Similar to the 'Access a service through remote host' use case above - but on a broader scope as all requests will be forwarded through the remote host. This is also very good for protecting yourself at coffee shops and public wifi access points. Setup a server listening for SSH connections on port 443 (rare to find this blocked - and one would have to use [deep packet inspection](http://en.wikipedia.org/wiki/Deep_packet_inspection) to disambiguate the traffic) and you have the ability to create your own SOCKs proxy at will to help mitigate the threats of public wifi --- or is it just me that worries?
 
 All of these can be used in various combinations to bend TCP ports to your will.
 
 Hope somebody finds it useful...
+
 
 
 
