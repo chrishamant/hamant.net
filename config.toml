@@ -1,7 +1,8 @@
-baseurl = "http://hamant.net/"
+baseurl = "/"
 languageCode = "en-us"
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
 title = "a milewide"
+publishdir = "_site"
 
 [params]
 description = "a milewide ~1.6km deep"
