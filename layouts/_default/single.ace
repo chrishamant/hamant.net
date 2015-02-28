@@ -9,7 +9,7 @@ html lang=en version="HTML+RDFa 1.1"
   body
     .hgroup
       h1
-        a rel="homepage" href="/" {{.Site.Title}}
+        a rel="home" href="/" {{.Site.Title}}
       h4 my little soapbox
     h1 {{.Title}}
     {{.Content}}
